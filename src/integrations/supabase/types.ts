@@ -14,7 +14,189 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      bookings: {
+        Row: {
+          car_type: string
+          created_at: string
+          customer_id: string
+          days_count: number
+          driver_id: string | null
+          drop_date: string
+          drop_location: string
+          drop_time: string
+          full_name: string
+          id: string
+          people_count: number
+          pickup_location: string
+          pickup_time: string
+          start_date: string
+          start_time: string
+        }
+        Insert: {
+          car_type: string
+          created_at?: string
+          customer_id: string
+          days_count: number
+          driver_id?: string | null
+          drop_date: string
+          drop_location: string
+          drop_time: string
+          full_name: string
+          id?: string
+          people_count: number
+          pickup_location: string
+          pickup_time: string
+          start_date: string
+          start_time: string
+        }
+        Update: {
+          car_type?: string
+          created_at?: string
+          customer_id?: string
+          days_count?: number
+          driver_id?: string | null
+          drop_date?: string
+          drop_location?: string
+          drop_time?: string
+          full_name?: string
+          id?: string
+          people_count?: number
+          pickup_location?: string
+          pickup_time?: string
+          start_date?: string
+          start_time?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bookings_customer_id_fkey"
+            columns: ["customer_id"]
+            isOneToOne: false
+            referencedRelation: "customers"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "bookings_driver_id_fkey"
+            columns: ["driver_id"]
+            isOneToOne: false
+            referencedRelation: "drivers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      customers: {
+        Row: {
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          mobile: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          mobile: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          mobile?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      drivers: {
+        Row: {
+          address: string
+          age: number
+          availability: boolean
+          contact: string
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          places_driven: string[]
+          profile_picture_url: string | null
+          rating: number
+          user_id: string
+        }
+        Insert: {
+          address: string
+          age: number
+          availability?: boolean
+          contact: string
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          places_driven?: string[]
+          profile_picture_url?: string | null
+          rating?: number
+          user_id: string
+        }
+        Update: {
+          address?: string
+          age?: number
+          availability?: boolean
+          contact?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          places_driven?: string[]
+          profile_picture_url?: string | null
+          rating?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      reviews: {
+        Row: {
+          comment: string | null
+          created_at: string
+          customer_id: string
+          driver_id: string
+          id: string
+          rating: number
+        }
+        Insert: {
+          comment?: string | null
+          created_at?: string
+          customer_id: string
+          driver_id: string
+          id?: string
+          rating: number
+        }
+        Update: {
+          comment?: string | null
+          created_at?: string
+          customer_id?: string
+          driver_id?: string
+          id?: string
+          rating?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reviews_customer_id_fkey"
+            columns: ["customer_id"]
+            isOneToOne: false
+            referencedRelation: "customers"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "reviews_driver_id_fkey"
+            columns: ["driver_id"]
+            isOneToOne: false
+            referencedRelation: "drivers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
