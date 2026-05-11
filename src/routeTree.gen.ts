@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SignupRouteImport } from './routes/signup'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as DriverLoginRouteImport } from './routes/driver-login'
@@ -19,6 +20,11 @@ import { Route as DriversIdRouteImport } from './routes/drivers.$id'
 import { Route as DriverDashboardRouteImport } from './routes/driver.dashboard'
 import { Route as CustomerDashboardRouteImport } from './routes/customer.dashboard'
 
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -72,6 +78,7 @@ export interface FileRoutesByFullPath {
   '/driver-login': typeof DriverLoginRoute
   '/login': typeof LoginRoute
   '/services': typeof ServicesRoute
+  '/signup': typeof SignupRoute
   '/customer/dashboard': typeof CustomerDashboardRoute
   '/driver/dashboard': typeof DriverDashboardRoute
   '/drivers/$id': typeof DriversIdRoute
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/driver-login': typeof DriverLoginRoute
   '/login': typeof LoginRoute
   '/services': typeof ServicesRoute
+  '/signup': typeof SignupRoute
   '/customer/dashboard': typeof CustomerDashboardRoute
   '/driver/dashboard': typeof DriverDashboardRoute
   '/drivers/$id': typeof DriversIdRoute
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/driver-login': typeof DriverLoginRoute
   '/login': typeof LoginRoute
   '/services': typeof ServicesRoute
+  '/signup': typeof SignupRoute
   '/customer/dashboard': typeof CustomerDashboardRoute
   '/driver/dashboard': typeof DriverDashboardRoute
   '/drivers/$id': typeof DriversIdRoute
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/driver-login'
     | '/login'
     | '/services'
+    | '/signup'
     | '/customer/dashboard'
     | '/driver/dashboard'
     | '/drivers/$id'
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/driver-login'
     | '/login'
     | '/services'
+    | '/signup'
     | '/customer/dashboard'
     | '/driver/dashboard'
     | '/drivers/$id'
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/driver-login'
     | '/login'
     | '/services'
+    | '/signup'
     | '/customer/dashboard'
     | '/driver/dashboard'
     | '/drivers/$id'
@@ -142,6 +154,7 @@ export interface RootRouteChildren {
   DriverLoginRoute: typeof DriverLoginRoute
   LoginRoute: typeof LoginRoute
   ServicesRoute: typeof ServicesRoute
+  SignupRoute: typeof SignupRoute
   CustomerDashboardRoute: typeof CustomerDashboardRoute
   DriverDashboardRoute: typeof DriverDashboardRoute
   DriversIdRoute: typeof DriversIdRoute
@@ -149,6 +162,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -222,6 +242,7 @@ const rootRouteChildren: RootRouteChildren = {
   DriverLoginRoute: DriverLoginRoute,
   LoginRoute: LoginRoute,
   ServicesRoute: ServicesRoute,
+  SignupRoute: SignupRoute,
   CustomerDashboardRoute: CustomerDashboardRoute,
   DriverDashboardRoute: DriverDashboardRoute,
   DriversIdRoute: DriversIdRoute,
@@ -229,13 +250,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
