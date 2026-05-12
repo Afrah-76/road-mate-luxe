@@ -54,13 +54,13 @@ function SignUp() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <SiteHeader />
       <section className="mx-auto max-w-md px-6 py-16 fade-up">
-        <div className="glass-card rounded-2xl p-8">
-          <p className="text-gold/80 tracking-[0.3em] text-xs uppercase mb-2 text-center">Customer</p>
+        <div className="brand-card p-8">
+          <p className="text-orange tracking-[0.3em] text-xs uppercase mb-2 text-center">Customer</p>
           <h1 className="font-display text-3xl text-center mb-2">Create your account</h1>
-          <p className="text-foreground/60 text-center mb-8 text-sm">
+          <p className="text-muted-foreground text-center mb-8 text-sm">
             Join Road Mate Tours to start booking journeys
           </p>
 
@@ -70,14 +70,14 @@ function SignUp() {
             <div><Label>Email</Label><Input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} /></div>
             <div><Label>Password</Label><Input type="password" required value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} /></div>
             <div><Label>Confirm password</Label><Input type="password" required value={form.confirm} onChange={(e) => setForm({ ...form, confirm: e.target.value })} /></div>
-            <Button type="submit" disabled={busy} className="w-full bg-gold text-primary-foreground hover:bg-gold-soft gold-glow">
+            <Button type="submit" disabled={busy} className="w-full bg-orange text-white hover:bg-[oklch(0.76_0.15_38)] orange-glow">
               {busy ? "Creating account…" : "Sign up"}
             </Button>
           </form>
 
-          <p className="text-center text-sm text-foreground/60 mt-6">
+          <p className="text-center text-sm text-muted-foreground mt-6">
             Already have an account?{" "}
-            <Link to="/login" className="text-gold hover:underline">Sign in</Link>
+            <Link to="/login" className="text-orange hover:underline font-medium">Sign in</Link>
           </p>
         </div>
       </section>

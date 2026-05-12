@@ -63,19 +63,19 @@ function CustomerLogin() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <SiteHeader />
       <section className="mx-auto max-w-md px-6 py-16 fade-up">
-        <div className="glass-card rounded-2xl p-8">
-          <p className="text-gold/80 tracking-[0.3em] text-xs uppercase mb-2 text-center">Customer</p>
+        <div className="brand-card p-8">
+          <p className="text-orange tracking-[0.3em] text-xs uppercase mb-2 text-center">Customer</p>
           <h1 className="font-display text-3xl text-center mb-2">{mode === "login" ? "Welcome back" : "Create account"}</h1>
-          <p className="text-foreground/60 text-center mb-8 text-sm">
+          <p className="text-muted-foreground text-center mb-8 text-sm">
             {mode === "login" ? "Sign in to book your next journey" : "Join us to start planning your adventures"}
           </p>
 
           <div className="flex rounded-lg bg-secondary p-1 mb-6">
-            <button type="button" onClick={() => setMode("login")} className={`flex-1 py-2 rounded-md text-sm transition ${mode === "login" ? "bg-gold text-primary-foreground" : "text-foreground/70"}`}>Login</button>
-            <button type="button" onClick={() => setMode("register")} className={`flex-1 py-2 rounded-md text-sm transition ${mode === "register" ? "bg-gold text-primary-foreground" : "text-foreground/70"}`}>Register</button>
+            <button type="button" onClick={() => setMode("login")} className={`flex-1 py-2 rounded-md text-sm transition ${mode === "login" ? "bg-orange text-white" : "text-foreground/70"}`}>Login</button>
+            <button type="button" onClick={() => setMode("register")} className={`flex-1 py-2 rounded-md text-sm transition ${mode === "register" ? "bg-orange text-white" : "text-foreground/70"}`}>Register</button>
           </div>
 
           <form onSubmit={submit} className="space-y-4">
@@ -90,7 +90,7 @@ function CustomerLogin() {
             {mode === "register" && (
               <div><Label>Confirm password</Label><Input type="password" required value={form.confirm} onChange={(e) => setForm({ ...form, confirm: e.target.value })} /></div>
             )}
-            <Button type="submit" disabled={busy} className="w-full bg-gold text-primary-foreground hover:bg-gold-soft gold-glow">
+            <Button type="submit" disabled={busy} className="w-full bg-orange text-white hover:bg-[oklch(0.76_0.15_38)] orange-glow">
               {busy ? "Please wait…" : mode === "login" ? "Sign in" : "Create account"}
             </Button>
           </form>
