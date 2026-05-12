@@ -16,55 +16,88 @@ export type Database = {
     Tables: {
       bookings: {
         Row: {
+          booking_code: string | null
           car_type: string
           created_at: string
           customer_id: string
-          days_count: number
+          days_count: number | null
           driver_id: string | null
-          drop_date: string
-          drop_location: string
-          drop_time: string
+          drop_date: string | null
+          drop_datetime: string | null
+          drop_location: string | null
+          drop_time: string | null
+          email: string | null
+          from_city: string | null
           full_name: string
           id: string
+          mobile: string | null
+          own_car_details: Json | null
           people_count: number
+          pickup_datetime: string | null
           pickup_location: string
-          pickup_time: string
+          pickup_time: string | null
+          special_instructions: string | null
           start_date: string
-          start_time: string
+          start_time: string | null
+          status: string
+          to_city: string | null
+          trip_type: string
         }
         Insert: {
+          booking_code?: string | null
           car_type: string
           created_at?: string
           customer_id: string
-          days_count: number
+          days_count?: number | null
           driver_id?: string | null
-          drop_date: string
-          drop_location: string
-          drop_time: string
+          drop_date?: string | null
+          drop_datetime?: string | null
+          drop_location?: string | null
+          drop_time?: string | null
+          email?: string | null
+          from_city?: string | null
           full_name: string
           id?: string
+          mobile?: string | null
+          own_car_details?: Json | null
           people_count: number
+          pickup_datetime?: string | null
           pickup_location: string
-          pickup_time: string
+          pickup_time?: string | null
+          special_instructions?: string | null
           start_date: string
-          start_time: string
+          start_time?: string | null
+          status?: string
+          to_city?: string | null
+          trip_type?: string
         }
         Update: {
+          booking_code?: string | null
           car_type?: string
           created_at?: string
           customer_id?: string
-          days_count?: number
+          days_count?: number | null
           driver_id?: string | null
-          drop_date?: string
-          drop_location?: string
-          drop_time?: string
+          drop_date?: string | null
+          drop_datetime?: string | null
+          drop_location?: string | null
+          drop_time?: string | null
+          email?: string | null
+          from_city?: string | null
           full_name?: string
           id?: string
+          mobile?: string | null
+          own_car_details?: Json | null
           people_count?: number
+          pickup_datetime?: string | null
           pickup_location?: string
-          pickup_time?: string
+          pickup_time?: string | null
+          special_instructions?: string | null
           start_date?: string
-          start_time?: string
+          start_time?: string | null
+          status?: string
+          to_city?: string | null
+          trip_type?: string
         }
         Relationships: [
           {
@@ -157,30 +190,46 @@ export type Database = {
       }
       reviews: {
         Row: {
+          booking_id: string | null
           comment: string | null
           created_at: string
           customer_id: string
           driver_id: string
           id: string
           rating: number
+          tags: string[]
+          trip_rating: number | null
         }
         Insert: {
+          booking_id?: string | null
           comment?: string | null
           created_at?: string
           customer_id: string
           driver_id: string
           id?: string
           rating: number
+          tags?: string[]
+          trip_rating?: number | null
         }
         Update: {
+          booking_id?: string | null
           comment?: string | null
           created_at?: string
           customer_id?: string
           driver_id?: string
           id?: string
           rating?: number
+          tags?: string[]
+          trip_rating?: number | null
         }
         Relationships: [
+          {
+            foreignKeyName: "reviews_booking_id_fkey"
+            columns: ["booking_id"]
+            isOneToOne: false
+            referencedRelation: "bookings"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "reviews_customer_id_fkey"
             columns: ["customer_id"]

@@ -87,16 +87,16 @@ function DriverLogin() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <SiteHeader />
       <section className="mx-auto max-w-lg px-6 py-16 fade-up">
-        <div className="glass-card rounded-2xl p-8">
-          <p className="text-gold/80 tracking-[0.3em] text-xs uppercase mb-2 text-center">Driver</p>
+        <div className="brand-card p-8">
+          <p className="text-orange tracking-[0.3em] text-xs uppercase mb-2 text-center">Driver</p>
           <h1 className="font-display text-3xl text-center mb-2">{mode === "login" ? "Driver sign in" : "Become a driver"}</h1>
 
           <div className="flex rounded-lg bg-secondary p-1 my-6">
-            <button type="button" onClick={() => setMode("login")} className={`flex-1 py-2 rounded-md text-sm transition ${mode === "login" ? "bg-gold text-primary-foreground" : "text-foreground/70"}`}>Login</button>
-            <button type="button" onClick={() => setMode("register")} className={`flex-1 py-2 rounded-md text-sm transition ${mode === "register" ? "bg-gold text-primary-foreground" : "text-foreground/70"}`}>Register</button>
+            <button type="button" onClick={() => setMode("login")} className={`flex-1 py-2 rounded-md text-sm transition ${mode === "login" ? "bg-orange text-white" : "text-foreground/70"}`}>Login</button>
+            <button type="button" onClick={() => setMode("register")} className={`flex-1 py-2 rounded-md text-sm transition ${mode === "register" ? "bg-orange text-white" : "text-foreground/70"}`}>Register</button>
           </div>
 
           <form onSubmit={submit} className="space-y-4">
@@ -115,7 +115,7 @@ function DriverLogin() {
             {mode === "register" && (
               <>
                 <div><Label>Confirm password</Label><Input type="password" required value={form.confirm} onChange={(e) => setForm({ ...form, confirm: e.target.value })} /></div>
-                <div className="flex items-center justify-between glass-card rounded-lg p-3">
+                <div className="flex items-center justify-between rounded-lg border border-[color:var(--border)] p-3">
                   <Label className="m-0">Available for trips</Label>
                   <Switch checked={form.availability} onCheckedChange={(v) => setForm({ ...form, availability: v })} />
                 </div>
@@ -129,12 +129,12 @@ function DriverLogin() {
                     <Input value={placeInput} onChange={(e) => setPlaceInput(e.target.value)}
                       onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); addPlace(); } }}
                       placeholder="e.g. Ooty" />
-                    <Button type="button" onClick={addPlace} variant="outline" className="border-gold/40 text-gold">Add</Button>
+                    <Button type="button" onClick={addPlace} variant="outline" className="border-orange text-orange hover:bg-orange hover:text-white">Add</Button>
                   </div>
                   {places.length > 0 && (
                     <div className="flex flex-wrap gap-2 mt-3">
                       {places.map((p) => (
-                        <span key={p} className="inline-flex items-center gap-1 text-xs px-3 py-1 rounded-full bg-gold/10 text-gold border border-gold/30">
+                        <span key={p} className="inline-flex items-center gap-1 text-xs px-3 py-1 rounded-full bg-[#FFF4F0] text-orange border border-orange/40">
                           {p}
                           <button type="button" onClick={() => setPlaces(places.filter((x) => x !== p))}><X className="h-3 w-3" /></button>
                         </span>
@@ -144,7 +144,7 @@ function DriverLogin() {
                 </div>
               </>
             )}
-            <Button type="submit" disabled={busy} className="w-full bg-gold text-primary-foreground hover:bg-gold-soft gold-glow">
+            <Button type="submit" disabled={busy} className="w-full bg-orange text-white hover:bg-[oklch(0.76_0.15_38)] orange-glow">
               {busy ? "Please wait…" : mode === "login" ? "Sign in" : "Create driver account"}
             </Button>
           </form>
