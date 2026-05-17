@@ -55,7 +55,7 @@ function HomePage() {
               </Button>
             </Link>
             <Link to="/services">
-              <Button size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10 hover:text-white px-8">
+              <Button size="lg" variant="outline" className="border-orange text-orange hover:bg-orange hover:text-white px-8">
                 Explore Destinations
               </Button>
             </Link>
