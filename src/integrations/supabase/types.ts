@@ -151,12 +151,16 @@ export type Database = {
           contact: string
           created_at: string
           email: string
+          facebook_url: string | null
           full_name: string
           id: string
+          instagram_id: string | null
           places_driven: string[]
           profile_picture_url: string | null
           rating: number
           user_id: string
+          vehicle_type: string | null
+          whatsapp_number: string | null
         }
         Insert: {
           address: string
@@ -165,12 +169,16 @@ export type Database = {
           contact: string
           created_at?: string
           email: string
+          facebook_url?: string | null
           full_name: string
           id?: string
+          instagram_id?: string | null
           places_driven?: string[]
           profile_picture_url?: string | null
           rating?: number
           user_id: string
+          vehicle_type?: string | null
+          whatsapp_number?: string | null
         }
         Update: {
           address?: string
@@ -179,12 +187,16 @@ export type Database = {
           contact?: string
           created_at?: string
           email?: string
+          facebook_url?: string | null
           full_name?: string
           id?: string
+          instagram_id?: string | null
           places_driven?: string[]
           profile_picture_url?: string | null
           rating?: number
           user_id?: string
+          vehicle_type?: string | null
+          whatsapp_number?: string | null
         }
         Relationships: []
       }
