@@ -146,6 +146,32 @@ function DriverLogin() {
                     </div>
                   )}
                 </div>
+                <div>
+                  <Label>Vehicle type</Label>
+                  <Select value={form.vehicle_type} onValueChange={(v) => setForm({ ...form, vehicle_type: v })}>
+                    <SelectTrigger><SelectValue /></SelectTrigger>
+                    <SelectContent>
+                      {["Car", "SUV", "Van", "Bus", "Tempo Traveller"].map((v) => (
+                        <SelectItem key={v} value={v}>{v}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="rounded-lg border border-[color:var(--border)] p-4 space-y-3">
+                  <Label className="text-sm font-medium">Public contact (shown on your profile)</Label>
+                  <div className="relative">
+                    <Facebook className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-orange" />
+                    <Input className="pl-9" placeholder="Facebook profile URL" value={form.facebook_url} onChange={(e) => setForm({ ...form, facebook_url: e.target.value })} />
+                  </div>
+                  <div className="relative">
+                    <Instagram className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-orange" />
+                    <Input className="pl-9" placeholder="Instagram handle (without @)" value={form.instagram_id} onChange={(e) => setForm({ ...form, instagram_id: e.target.value })} />
+                  </div>
+                  <div className="relative">
+                    <MessageCircle className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-orange" />
+                    <Input className="pl-9" placeholder="WhatsApp number e.g. 919876543210" value={form.whatsapp_number} onChange={(e) => setForm({ ...form, whatsapp_number: e.target.value })} />
+                  </div>
+                </div>
               </>
             )}
             <Button type="submit" disabled={busy} className="w-full bg-orange text-white hover:bg-[oklch(0.76_0.15_38)] orange-glow">
