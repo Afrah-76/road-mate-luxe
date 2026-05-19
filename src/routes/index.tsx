@@ -209,8 +209,9 @@ function FeedbackForm() {
     setBusy(true);
     try {
       const { data: cust } = await supabase.from("customers").select("id").eq("user_id", user.id).maybeSingle();
+      if (!cust?.id) { toast.error("Customer profile not found"); return; }
       const { data: latest } = await supabase.from("bookings")
-        .select("driver_id, id").eq("customer_id", cust?.id).not("driver_id", "is", null)
+        .select("driver_id, id").eq("customer_id", cust.id).not("driver_id", "is", null)
         .order("created_at", { ascending: false }).limit(1).maybeSingle();
       if (!latest?.driver_id) { toast.error("Complete a trip first to leave a review"); return; }
       const { error } = await supabase.from("reviews").insert({
