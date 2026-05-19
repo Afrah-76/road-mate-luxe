@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth";
-import { Star, MapPin, Phone, ArrowLeft } from "lucide-react";
+import { Star, MapPin, Phone, ArrowLeft, Award, Car, Facebook, Instagram, MessageCircle } from "lucide-react";
 
 export const Route = createFileRoute("/drivers/$id")({
   head: () => ({ meta: [{ title: "Driver Profile — Road Mate Tours" }] }),
@@ -54,18 +54,57 @@ function DriverProfile() {
                   <h1 className="font-display text-3xl md:text-4xl">{driver.full_name}</h1>
                   <p className="text-muted-foreground mt-1">Age {driver.age}</p>
                 </div>
-                <span className={`text-xs px-3 py-1 rounded-full ${driver.availability ? "bg-green-50 text-green-700 border border-green-200" : "bg-red-50 text-red-700 border border-red-200"}`}>
-                  {driver.availability ? "Available" : "Not available"}
-                </span>
+                <div className="flex flex-col items-end gap-2">
+                  <span className={`text-xs px-3 py-1 rounded-full ${driver.availability ? "bg-green-50 text-green-700 border border-green-200" : "bg-red-50 text-red-700 border border-red-200"}`}>
+                    {driver.availability ? "Available" : "Not available"}
+                  </span>
+                  {Number(driver.rating) >= 4.5 && (
+                    <span className="inline-flex items-center gap-1 text-xs px-3 py-1 rounded-full bg-orange text-white font-medium">
+                      <Award className="h-3 w-3" /> Top Rated
+                    </span>
+                  )}
+                </div>
               </div>
 
               <div className="flex items-center gap-2 text-orange mt-4">
-                <Star className="h-5 w-5 fill-orange" />
-                <span className="text-xl font-display">{Number(driver.rating).toFixed(1)}</span>
+                <div className="flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className={`h-5 w-5 ${i < Math.round(Number(driver.rating)) ? "fill-orange" : "text-[#E0E0DD]"}`} />
+                  ))}
+                </div>
+                <span className="text-xl font-display ml-1">{Number(driver.rating).toFixed(1)}</span>
                 <span className="text-muted-foreground text-sm">· {reviews.length} review{reviews.length === 1 ? "" : "s"}</span>
               </div>
 
-              <div className="flex items-center gap-2 text-foreground/80 mt-3"><Phone className="h-4 w-4 text-orange" /> {driver.contact}</div>
+              <div className="flex flex-wrap gap-4 mt-3 text-sm text-foreground/80">
+                <div className="flex items-center gap-2"><Phone className="h-4 w-4 text-orange" /> {driver.contact}</div>
+                {driver.vehicle_type && (
+                  <div className="flex items-center gap-2"><Car className="h-4 w-4 text-orange" /> {driver.vehicle_type}</div>
+                )}
+              </div>
+
+              {(driver.facebook_url || driver.instagram_id || driver.whatsapp_number) && (
+                <div className="flex gap-2 mt-4">
+                  {driver.facebook_url && (
+                    <a href={driver.facebook_url} target="_blank" rel="noreferrer" aria-label="Facebook"
+                      className="p-2 rounded-full border border-orange/30 text-orange hover:bg-orange hover:text-white transition">
+                      <Facebook className="h-4 w-4" />
+                    </a>
+                  )}
+                  {driver.instagram_id && (
+                    <a href={`https://instagram.com/${driver.instagram_id.replace("@", "")}`} target="_blank" rel="noreferrer" aria-label="Instagram"
+                      className="p-2 rounded-full border border-orange/30 text-orange hover:bg-orange hover:text-white transition">
+                      <Instagram className="h-4 w-4" />
+                    </a>
+                  )}
+                  {driver.whatsapp_number && (
+                    <a href={`https://wa.me/${driver.whatsapp_number.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" aria-label="WhatsApp"
+                      className="p-2 rounded-full border border-orange/30 text-orange hover:bg-orange hover:text-white transition">
+                      <MessageCircle className="h-4 w-4" />
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </div>
 
