@@ -9,7 +9,8 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth";
 import { toast } from "sonner";
-import { X } from "lucide-react";
+import { X, Facebook, Instagram, MessageCircle } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export const Route = createFileRoute("/driver-login")({
   head: () => ({ meta: [{ title: "Driver Login — Road Mate Tours" }] }),
@@ -21,6 +22,7 @@ function DriverLogin() {
   const [form, setForm] = useState({
     full_name: "", age: "", address: "", contact: "", email: "",
     password: "", confirm: "", availability: true,
+    facebook_url: "", instagram_id: "", whatsapp_number: "", vehicle_type: "Car",
   });
   const [photo, setPhoto] = useState<File | null>(null);
   const [places, setPlaces] = useState<string[]>([]);
@@ -67,6 +69,8 @@ function DriverLogin() {
           user_id: uid, full_name: form.full_name, age: parseInt(form.age),
           address: form.address, contact: form.contact, email: form.email,
           availability: form.availability, profile_picture_url: photo_url, places_driven: places,
+          facebook_url: form.facebook_url || null, instagram_id: form.instagram_id || null,
+          whatsapp_number: form.whatsapp_number || null, vehicle_type: form.vehicle_type,
         });
         if (insErr) throw insErr;
         await refreshRole();
@@ -141,6 +145,32 @@ function DriverLogin() {
                       ))}
                     </div>
                   )}
+                </div>
+                <div>
+                  <Label>Vehicle type</Label>
+                  <Select value={form.vehicle_type} onValueChange={(v) => setForm({ ...form, vehicle_type: v })}>
+                    <SelectTrigger><SelectValue /></SelectTrigger>
+                    <SelectContent>
+                      {["Car", "SUV", "Van", "Bus", "Tempo Traveller"].map((v) => (
+                        <SelectItem key={v} value={v}>{v}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="rounded-lg border border-[color:var(--border)] p-4 space-y-3">
+                  <Label className="text-sm font-medium">Public contact (shown on your profile)</Label>
+                  <div className="relative">
+                    <Facebook className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-orange" />
+                    <Input className="pl-9" placeholder="Facebook profile URL" value={form.facebook_url} onChange={(e) => setForm({ ...form, facebook_url: e.target.value })} />
+                  </div>
+                  <div className="relative">
+                    <Instagram className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-orange" />
+                    <Input className="pl-9" placeholder="Instagram handle (without @)" value={form.instagram_id} onChange={(e) => setForm({ ...form, instagram_id: e.target.value })} />
+                  </div>
+                  <div className="relative">
+                    <MessageCircle className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-orange" />
+                    <Input className="pl-9" placeholder="WhatsApp number e.g. 919876543210" value={form.whatsapp_number} onChange={(e) => setForm({ ...form, whatsapp_number: e.target.value })} />
+                  </div>
                 </div>
               </>
             )}
