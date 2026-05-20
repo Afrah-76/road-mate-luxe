@@ -44,7 +44,7 @@ const IMG = {
 
 // Place cover photos — exact Unsplash URLs requested by the user.
 const COVER = {
-  ooty:          "https://s3.india.com/wp-content/uploads/2024/07/Historical-Places-To-Visit-In-Ooty.jpg?impolicy=Medium_Widthonly&w=800&h=541",
+  ooty:          "https://www.clubmahindra.com/blog/images/Ooty-Places-to-Visit-in-Ooty.jpg",
   kodaikanal:    "https://images.unsplash.com/photo-1582651957829-c2607a7538c5?w=800&q=80",
   rameswaram:    "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80",
   madurai:       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80",
