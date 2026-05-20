@@ -30,7 +30,8 @@ function PlaceDetail() {
   if (!place) throw notFound();
 
   const mapSrc = `https://www.google.com/maps?q=${place.lat},${place.lon}&z=12&output=embed`;
-  const galleryQueries = [place.name, ...place.spots.slice(0, 5)];
+  const galleryImages = place.gallery;
+  const galleryCaptions = [place.name, ...place.spots.slice(0, 4)];
 
   return (
     <div className="min-h-screen bg-background">
@@ -45,7 +46,7 @@ function PlaceDetail() {
             <div className="grid md:grid-cols-2 gap-0">
               <div className="aspect-[4/3] md:aspect-auto bg-[#FFF4F0]">
                 <img
-                  src={`https://source.unsplash.com/featured/1200x900/?${encodeURIComponent(place.name + ",india,travel")}`}
+                  src={place.image}
                   alt={place.name}
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -101,11 +102,11 @@ function PlaceDetail() {
               <Camera className="h-5 w-5 text-orange" /> Photo gallery
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {galleryQueries.map((q, i) => (
+              {galleryImages.map((src, i) => (
                 <div key={i} className="aspect-[4/3] overflow-hidden rounded-xl border border-[color:var(--border)] group">
                   <img
-                    src={`https://source.unsplash.com/featured/800x600/?${encodeURIComponent(q + ",tamilnadu,india")}&sig=${i}`}
-                    alt={q}
+                    src={src}
+                    alt={galleryCaptions[i] ?? place.name}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
