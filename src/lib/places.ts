@@ -18,7 +18,7 @@ const IMG = {
   hills3: u("photo-1501785888041-af3ef285b470"),
   hills4: u("photo-1470071459604-3b5ec3a7fe05"),
   tea:    u("photo-1563911892437-1feda0179e1b"),
-  lake1:  u("photo-1439066615861-d1af74d74000"),
+  lake1:  "https://www.indiatravel.app/wp-content/uploads/2024/04/Ooty-Tea-Museum.jpg",
   lake2:  u("photo-1447752875215-b2761acb3c5d"),
   forest: u("photo-1448375240586-882707db888b"),
   pine:   u("photo-1441974231531-c6227db76b6e"),
