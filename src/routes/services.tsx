@@ -35,7 +35,7 @@ function ServicesPage() {
               <article className="group brand-card overflow-hidden h-full flex flex-col transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:orange-glow hover:border-orange">
                 <div className="relative h-52 overflow-hidden">
                   <img
-                    src={`https://source.unsplash.com/featured/800x600/?${encodeURIComponent(p.name + ",tamilnadu")}`}
+                    src={p.image}
                     alt={p.name}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
