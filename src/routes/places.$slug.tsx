@@ -102,11 +102,11 @@ function PlaceDetail() {
               <Camera className="h-5 w-5 text-orange" /> Photo gallery
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {galleryQueries.map((q, i) => (
+              {galleryImages.map((src, i) => (
                 <div key={i} className="aspect-[4/3] overflow-hidden rounded-xl border border-[color:var(--border)] group">
                   <img
-                    src={`https://source.unsplash.com/featured/800x600/?${encodeURIComponent(q + ",tamilnadu,india")}&sig=${i}`}
-                    alt={q}
+                    src={src}
+                    alt={galleryCaptions[i] ?? place.name}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
