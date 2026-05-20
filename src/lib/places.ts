@@ -14,7 +14,7 @@ const u = (id: string) => `https://images.unsplash.com/${id}?w=1200&q=80&auto=fo
 // Themed fallback photos for spot galleries (stable Unsplash CDN URLs).
 const IMG = {
   hills1: "https://www.clubmahindra.com/blog/images/Ooty-Places-to-Visit-in-Ooty.jpg",
-  hills2: u("photo-1506905925346-21bda4d32df4"),
+  hills2: "https://www.tourmyindia.com/states/tamilnadu/images/kodaikanal-lake.jpg",
   hills3: u("photo-1501785888041-af3ef285b470"),
   hills4: u("photo-1470071459604-3b5ec3a7fe05"),
   tea:    "https://static.wixstatic.com/media/adbc9d_5f9f1beb25274cd4bedb07a538223497~mv2.jpg/v1/fill/w_980,h_980,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/adbc9d_5f9f1beb25274cd4bedb07a538223497~mv2.jpg",
