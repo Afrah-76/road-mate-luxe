@@ -46,7 +46,7 @@ function PlaceDetail() {
             <div className="grid md:grid-cols-2 gap-0">
               <div className="aspect-[4/3] md:aspect-auto bg-[#FFF4F0]">
                 <img
-                  src={`https://source.unsplash.com/featured/1200x900/?${encodeURIComponent(place.name + ",india,travel")}`}
+                  src={place.image}
                   alt={place.name}
                   className="h-full w-full object-cover"
                   loading="lazy"
