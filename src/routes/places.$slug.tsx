@@ -30,7 +30,8 @@ function PlaceDetail() {
   if (!place) throw notFound();
 
   const mapSrc = `https://www.google.com/maps?q=${place.lat},${place.lon}&z=12&output=embed`;
-  const galleryQueries = [place.name, ...place.spots.slice(0, 5)];
+  const galleryImages = place.gallery;
+  const galleryCaptions = [place.name, ...place.spots.slice(0, 4)];
 
   return (
     <div className="min-h-screen bg-background">
