@@ -33,7 +33,7 @@ const IMG = {
   beach3: u("photo-1505228395891-9a51e7e86bf6"),
   ocean:  u("photo-1439405326854-014607f694d7"),
   sunset: u("photo-1495616811223-4d98c6e9c869"),
-  bridge: u("photo-1502920917128-1aa500764cbd"),
+  bridge: "https://www.justahotels.com/wp-content/uploads/2022/09/temple-rameswaram.png",
   fall1:  "https://assets.traveltriangle.com/blog/wp-content/uploads/2018/02/Perumal-Peak-kb6592hdg.jpg",
   fall2:  "https://images.news9live.com/wp-content/uploads/2025/10/pillars-rock-kodaikanal-.png",
   fort:   u("photo-1564507592333-c60657eea523"),
