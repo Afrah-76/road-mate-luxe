@@ -22,7 +22,7 @@ const IMG = {
   lake2:  "https://assets.traveltriangle.com/blog/wp-content/uploads/2018/04/Thirumalai-Nayak-Mahal.jpg",
   forest: "https://www.sharonsable.com/images/10/9532/botanical-gardens-in-ooty-25-photo-7089.jpg",
   pine:   u("photo-1441974231531-c6227db76b6e"),
-  temple1: u("photo-1582510003544-4d00b7f74220"),
+  temple1: "https://www.indiatravel.app/wp-content/uploads/2024/02/places-to-visit-in-mahabalipuram.jpg",
   temple2: u("photo-1609858155423-5fae0bd55785"),
   temple3: "https://www.holidify.com/images/bgImages/MADURAI.jpg",
   temple4: "https://irisholidays.com/keralatourism/wp-content/uploads/2025/02/mahabalipuram-tamlnadu.jpg",
