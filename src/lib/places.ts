@@ -26,7 +26,7 @@ const IMG = {
   temple2: u("photo-1609858155423-5fae0bd55785"),
   temple3: u("photo-1524492412937-b28074a5d7da"),
   temple4: u("photo-1561361513-2d000a50f0dc"),
-  india1: u("photo-1517457373958-b7bdd4587205"),
+  india1: "https://img.veenaworld.com/wp-content/uploads/2020/11/10-Madurai-Temples-with-Brilliant-Architecture-scaled.jpg",
   india2: u("photo-1514222134-b57cbb8ce073"),
   beach1: "https://www.sharpholidays.in/blog/wp-content/uploads/2025/03/vivekananda-memorial-rameswaram-768x444.jpg",
   beach2: u("photo-1519046904884-53103b34b206"),
