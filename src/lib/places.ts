@@ -38,7 +38,7 @@ const IMG = {
   fall2:  "https://images.news9live.com/wp-content/uploads/2025/10/pillars-rock-kodaikanal-.png",
   fort:   u("photo-1564507592333-c60657eea523"),
   city:   u("photo-1477587458883-47145ed94245"),
-  palace: "https://newstodaynet.com/wp-content/uploads/2024/12/images-53-1.jpeg",
+  palace: "https://wallpapercave.com/wp/wp10186284.jpg",
   market: u("photo-1532375810709-75b1da00537c"),
 };
 
