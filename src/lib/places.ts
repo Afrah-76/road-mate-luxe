@@ -27,7 +27,7 @@ const IMG = {
   temple3: "https://www.holidify.com/images/bgImages/MADURAI.jpg",
   temple4: "https://irisholidays.com/keralatourism/wp-content/uploads/2025/02/mahabalipuram-tamlnadu.jpg",
   india1: "https://img.veenaworld.com/wp-content/uploads/2020/11/10-Madurai-Temples-with-Brilliant-Architecture-scaled.jpg",
-  india2: "https://wanderon-images.gumlet.io/blogs/new/2025/01/23/schwartz-church-thanjavur.jpg",
+  india2: "https://live.staticflickr.com/4183/34099271690_faf125c562_b.jpg",
   beach1: "https://www.sharpholidays.in/blog/wp-content/uploads/2025/03/vivekananda-memorial-rameswaram-768x444.jpg",
   beach2: "https://www.hoteltempleciti.com/blog/wp-content/uploads/2022/03/Best-Time-To-Visit-Kanyakumari.jpg",
   beach3: "https://hubnetwork.in/wp-content/uploads/2021/05/Mahabalipuram-Light-House.jpg",
