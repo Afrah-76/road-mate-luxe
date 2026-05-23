@@ -42,20 +42,15 @@ const IMG = {
   market: u("photo-1532375810709-75b1da00537c"),
 };
 
-// Place cover photos — exact Unsplash URLs requested by the user.
+// Place cover photos — exact URLs requested by the user.
 const COVER = {
   ooty:          "https://s3.india.com/wp-content/uploads/2024/07/Historical-Places-To-Visit-In-Ooty.jpg?impolicy=Medium_Widthonly&w=800&h=541",
   kodaikanal:    "https://www.treebo.com/blog/wp-content/uploads/2018/08/Things-To-Do-In-Kodaikanal.jpg",
   rameswaram:    "https://www.justahotels.com/wp-content/uploads/2023/12/HQ368254-transformed.jpeg",
-  madurai:       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80",
+  madurai:       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&q=75&auto=format&fit=crop",
   kanyakumari:   "https://www.tusktravel.com/blog/wp-content/uploads/2021/01/Kanyakumari-Temple.jpg",
   mahabalipuram: "https://wallpaperaccess.com/full/11038015.jpg",
   thanjavur:     "https://cdn.britannica.com/84/196584-050-410B179D/Brihadishvara-Chola-temple-Thanjavur-India-Tamil-Nadu.jpg",
-  yercaud:       "https://upload.wikimedia.org/wikipedia/commons/9/9d/Yercaud_lake_boating.jpg?utm_source=chatgpt.com",
-  coimbatore:    "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80",
-  tiruppur:      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-  vellore:       "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&q=80",
-  courtallam:    "https://images.unsplash.com/photo-1544550581-5f7ceaf7f992?w=800&q=80",
 };
 
 export const PLACES: Place[] = [
@@ -80,21 +75,6 @@ export const PLACES: Place[] = [
   { slug: "thanjavur", name: "Thanjavur (Tanjore)", description: "Cradle of Chola art, music and the Brihadeeswarar Temple.", lat: 10.7870, lon: 79.1378,
     spots: ["Brihadeeswarar Temple", "Thanjavur Palace", "Saraswathi Mahal Library", "Schwartz Church", "Thanjavur Art Gallery"],
     image: COVER.thanjavur, gallery: [COVER.thanjavur, IMG.palace, IMG.india1, IMG.temple2, IMG.india2] },
-  { slug: "yercaud", name: "Yercaud", description: "A quiet hill station on the Shevaroy hills, coffee and orange groves.", lat: 11.7747, lon: 78.2095,
-    spots: ["Yercaud Lake", "Lady's Seat Viewpoint", "Kiliyur Falls", "Shevaroy Temple", "Yercaud Rose Garden"],
-    image: COVER.yercaud, gallery: [COVER.yercaud, IMG.lake1, IMG.hills3, IMG.fall1, IMG.forest] },
-  { slug: "coimbatore", name: "Coimbatore", description: "Manchester of South India — gateway to the Western Ghats.", lat: 11.0168, lon: 76.9558,
-    spots: ["Marudamalai Temple", "VOC Park & Zoo", "Gedee Car Museum", "Dhyanalinga (Isha Foundation)", "Perur Pateeswarar Temple"],
-    image: COVER.coimbatore, gallery: [COVER.coimbatore, IMG.temple1, IMG.city, IMG.hills4, IMG.temple3] },
-  { slug: "tiruppur", name: "Tiruppur", description: "Knit city with parks, temples and a buzzing local culture.", lat: 11.1085, lon: 77.3411,
-    spots: ["Noyyal River Park", "Kangeyam", "Amaravathi Dam", "Avinashi Temple", "Tiruppur Kumaran Memorial"],
-    image: COVER.tiruppur, gallery: [COVER.tiruppur, IMG.lake2, IMG.city, IMG.temple2, IMG.market] },
-  { slug: "vellore", name: "Vellore", description: "Fort city famous for the golden temple of Sripuram.", lat: 12.9165, lon: 79.1325,
-    spots: ["Vellore Fort", "Sripuram Golden Temple", "Jalakandeswarar Temple", "Government Museum", "Amirthi Zoological Park"],
-    image: COVER.vellore, gallery: [COVER.vellore, IMG.fort, IMG.temple3, IMG.palace, IMG.forest] },
-  { slug: "courtallam", name: "Courtallam (Kutralam)", description: "Spa of South India — a constellation of healing waterfalls.", lat: 8.9333, lon: 77.2667,
-    spots: ["Main Falls", "Five Falls", "Old Courtallam Falls", "Tiger Falls", "Honey Falls"],
-    image: COVER.courtallam, gallery: [COVER.courtallam, IMG.fall1, IMG.fall2, IMG.forest, IMG.hills2] },
 ];
 
 export const findPlace = (slug: string) => PLACES.find((p) => p.slug === slug);
