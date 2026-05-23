@@ -24,7 +24,7 @@ const IMG = {
   pine:   u("photo-1441974231531-c6227db76b6e"),
   temple1: u("photo-1582510003544-4d00b7f74220"),
   temple2: u("photo-1609858155423-5fae0bd55785"),
-  temple3: u("photo-1524492412937-b28074a5d7da"),
+  temple3: "https://www.holidify.com/images/bgImages/MADURAI.jpg",
   temple4: u("photo-1561361513-2d000a50f0dc"),
   india1: "https://img.veenaworld.com/wp-content/uploads/2020/11/10-Madurai-Temples-with-Brilliant-Architecture-scaled.jpg",
   india2: u("photo-1514222134-b57cbb8ce073"),
