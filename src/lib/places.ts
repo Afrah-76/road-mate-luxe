@@ -28,7 +28,7 @@ const IMG = {
   temple4: u("photo-1561361513-2d000a50f0dc"),
   india1: u("photo-1517457373958-b7bdd4587205"),
   india2: u("photo-1514222134-b57cbb8ce073"),
-  beach1: u("photo-1507525428034-b723cf961d3e"),
+  beach1: "https://www.sharpholidays.in/blog/wp-content/uploads/2025/03/vivekananda-memorial-rameswaram-768x444.jpg",
   beach2: u("photo-1519046904884-53103b34b206"),
   beach3: u("photo-1505228395891-9a51e7e86bf6"),
   ocean:  u("photo-1439405326854-014607f694d7"),
