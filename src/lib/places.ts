@@ -31,7 +31,7 @@ const IMG = {
   beach1: "https://www.sharpholidays.in/blog/wp-content/uploads/2025/03/vivekananda-memorial-rameswaram-768x444.jpg",
   beach2: u("photo-1519046904884-53103b34b206"),
   beach3: u("photo-1505228395891-9a51e7e86bf6"),
-  ocean:  u("photo-1439405326854-014607f694d7"),
+  ocean:  "https://wallpapers.com/images/hd/indian-railway-pictures-g2z5m7jksrpvkwzw.jpg",
   sunset: u("photo-1495616811223-4d98c6e9c869"),
   bridge: "https://www.justahotels.com/wp-content/uploads/2022/09/temple-rameswaram.png",
   fall1:  "https://assets.traveltriangle.com/blog/wp-content/uploads/2018/02/Perumal-Peak-kb6592hdg.jpg",
