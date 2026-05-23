@@ -2,7 +2,7 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { LogOut, Menu, X, Mail, Phone, MapPin, Facebook, Instagram, Youtube, MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -15,9 +15,23 @@ export function SiteHeader() {
   const { user, role, signOut } = useAuth();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y < 80) setHidden(false);
+      else if (y > lastY.current + 6) setHidden(true);
+      else if (y < lastY.current - 6) setHidden(false);
+      lastY.current = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-charcoal text-white border-b border-black/20">
+    <header className={`sticky top-0 z-50 bg-charcoal text-white border-b border-black/20 transition-transform duration-300 ${hidden ? "-translate-y-full" : "translate-y-0"}`}>
       <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <span className="font-display text-2xl tracking-tight text-white">
@@ -30,7 +44,7 @@ export function SiteHeader() {
             <Link
               key={l.to}
               to={l.to}
-              className="text-sm tracking-wide text-white/75 hover:text-orange transition-colors"
+              className="nav-link text-sm tracking-wide text-white/75 hover:text-orange transition-colors"
               activeProps={{ className: "text-orange font-medium" }}
               activeOptions={{ exact: l.to === "/" }}
             >
@@ -100,10 +114,10 @@ export function SiteFooter() {
               <div className="flex items-center gap-2"><MapPin className="h-4 w-4 text-orange" /> Tamil Nadu, India</div>
             </div>
             <div className="flex gap-3 mt-5">
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="p-2 rounded-full border border-white/15 hover:border-orange hover:text-orange transition"><Facebook className="h-4 w-4" /></a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="p-2 rounded-full border border-white/15 hover:border-orange hover:text-orange transition"><Instagram className="h-4 w-4" /></a>
-              <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube" className="p-2 rounded-full border border-white/15 hover:border-orange hover:text-orange transition"><Youtube className="h-4 w-4" /></a>
-              <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" aria-label="WhatsApp" className="p-2 rounded-full border border-white/15 hover:border-orange hover:text-orange transition"><MessageCircle className="h-4 w-4" /></a>
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="p-2 rounded-full border border-white/15 hover:border-orange hover:text-orange hover:scale-110 transition-transform duration-300"><Facebook className="h-4 w-4" /></a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="p-2 rounded-full border border-white/15 hover:border-orange hover:text-orange hover:scale-110 transition-transform duration-300"><Instagram className="h-4 w-4" /></a>
+              <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube" className="p-2 rounded-full border border-white/15 hover:border-orange hover:text-orange hover:scale-110 transition-transform duration-300"><Youtube className="h-4 w-4" /></a>
+              <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" aria-label="WhatsApp" className="p-2 rounded-full border border-white/15 hover:border-orange hover:text-orange hover:scale-110 transition-transform duration-300"><MessageCircle className="h-4 w-4" /></a>
             </div>
           </div>
 

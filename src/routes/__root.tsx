@@ -11,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { AuthProvider } from "@/lib/auth";
 import { Toaster } from "@/components/ui/sonner";
+import { ScrollProgress, ScrollToTopButton } from "@/components/ScrollEnhancements";
 
 function NotFoundComponent() {
   return (
@@ -116,7 +117,9 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
+        <ScrollProgress />
         <Outlet />
+        <ScrollToTopButton />
         <Toaster />
       </AuthProvider>
     </QueryClientProvider>
