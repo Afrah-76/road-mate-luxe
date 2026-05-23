@@ -51,7 +51,7 @@ const COVER = {
   kanyakumari:   "https://www.tusktravel.com/blog/wp-content/uploads/2021/01/Kanyakumari-Temple.jpg",
   mahabalipuram: "https://wallpaperaccess.com/full/11038015.jpg",
   thanjavur:     "https://cdn.britannica.com/84/196584-050-410B179D/Brihadishvara-Chola-temple-Thanjavur-India-Tamil-Nadu.jpg",
-  yercaud:       "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&q=80",
+  yercaud:       "https://upload.wikimedia.org/wikipedia/commons/9/9d/Yercaud_lake_boating.jpg?utm_source=chatgpt.com",
   coimbatore:    "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80",
   tiruppur:      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
   vellore:       "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&q=80",
