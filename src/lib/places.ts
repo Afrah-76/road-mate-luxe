@@ -50,7 +50,7 @@ const COVER = {
   madurai:       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80",
   kanyakumari:   "https://www.tusktravel.com/blog/wp-content/uploads/2021/01/Kanyakumari-Temple.jpg",
   mahabalipuram: "https://wallpaperaccess.com/full/11038015.jpg",
-  thanjavur:     "https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?w=800&q=80",
+  thanjavur:     "https://cdn.britannica.com/84/196584-050-410B179D/Brihadishvara-Chola-temple-Thanjavur-India-Tamil-Nadu.jpg",
   yercaud:       "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&q=80",
   coimbatore:    "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80",
   tiruppur:      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
