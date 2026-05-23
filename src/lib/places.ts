@@ -29,7 +29,7 @@ const IMG = {
   india1: "https://img.veenaworld.com/wp-content/uploads/2020/11/10-Madurai-Temples-with-Brilliant-Architecture-scaled.jpg",
   india2: u("photo-1514222134-b57cbb8ce073"),
   beach1: "https://www.sharpholidays.in/blog/wp-content/uploads/2025/03/vivekananda-memorial-rameswaram-768x444.jpg",
-  beach2: u("photo-1519046904884-53103b34b206"),
+  beach2: "https://www.hoteltempleciti.com/blog/wp-content/uploads/2022/03/Best-Time-To-Visit-Kanyakumari.jpg",
   beach3: "https://www.justahotels.com/wp-content/uploads/2023/09/Rameswaram.jpg",
   ocean:  "https://assets.traveltriangle.com/blog/wp-content/uploads/2018/04/Thiruvalluvar-Statue.jpg",
   sunset: u("photo-1495616811223-4d98c6e9c869"),
