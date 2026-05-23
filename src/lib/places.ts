@@ -38,7 +38,7 @@ const IMG = {
   fall2:  "https://images.news9live.com/wp-content/uploads/2025/10/pillars-rock-kodaikanal-.png",
   fort:   u("photo-1564507592333-c60657eea523"),
   city:   u("photo-1477587458883-47145ed94245"),
-  palace: u("photo-1548013146-72479768bada"),
+  palace: "https://blogs.revv.co.in/blogs/wp-content/uploads/2020/05/meenakshi-temple-in-Madurai-1024x683.jpg",
   market: u("photo-1532375810709-75b1da00537c"),
 };
 
