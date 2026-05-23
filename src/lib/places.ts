@@ -30,7 +30,7 @@ const IMG = {
   india2: "https://imgcld.yatra.com/ytimages/image/upload/v1433743550/Mahabalipuram_5.jpg",
   beach1: "https://www.sharpholidays.in/blog/wp-content/uploads/2025/03/vivekananda-memorial-rameswaram-768x444.jpg",
   beach2: "https://www.hoteltempleciti.com/blog/wp-content/uploads/2022/03/Best-Time-To-Visit-Kanyakumari.jpg",
-  beach3: "https://www.justahotels.com/wp-content/uploads/2023/09/Rameswaram.jpg",
+  beach3: "https://hubnetwork.in/wp-content/uploads/2021/05/Mahabalipuram-Light-House.jpg",
   ocean:  "https://assets.traveltriangle.com/blog/wp-content/uploads/2018/04/Thiruvalluvar-Statue.jpg",
   sunset: u("photo-1495616811223-4d98c6e9c869"),
   bridge: "https://www.justahotels.com/wp-content/uploads/2022/09/temple-rameswaram.png",
