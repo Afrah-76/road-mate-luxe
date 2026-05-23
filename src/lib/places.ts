@@ -49,7 +49,7 @@ const COVER = {
   rameswaram:    "https://www.justahotels.com/wp-content/uploads/2023/12/HQ368254-transformed.jpeg",
   madurai:       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80",
   kanyakumari:   "https://www.tusktravel.com/blog/wp-content/uploads/2021/01/Kanyakumari-Temple.jpg",
-  mahabalipuram: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800&q=80",
+  mahabalipuram: "https://wallpaperaccess.com/full/11038015.jpg",
   thanjavur:     "https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?w=800&q=80",
   yercaud:       "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&q=80",
   coimbatore:    "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80",
