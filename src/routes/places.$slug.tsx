@@ -3,6 +3,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
 import { Button } from "@/components/ui/button";
 import { WeatherBadge } from "@/components/WeatherBadge";
 import { Reveal } from "@/components/Reveal";
+import { SmartImage } from "@/components/SmartImage";
 import { findPlace, PLACES } from "@/lib/places";
 import { ArrowLeft, MapPin, Camera } from "lucide-react";
 
@@ -44,13 +45,8 @@ function PlaceDetail() {
         <Reveal>
           <div className="brand-card overflow-hidden mb-8">
             <div className="grid md:grid-cols-2 gap-0">
-              <div className="aspect-[4/3] md:aspect-auto bg-[#FFF4F0]">
-                <img
-                  src={place.image}
-                  alt={place.name}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
+              <div className="aspect-[4/3] md:aspect-auto bg-[#FFF4F0] relative min-h-[260px]">
+                <SmartImage src={place.image} alt={place.name} />
               </div>
               <div className="p-6 md:p-10 flex flex-col">
                 <p className="text-orange tracking-[0.3em] text-xs uppercase mb-3">Tamil Nadu</p>
@@ -103,13 +99,10 @@ function PlaceDetail() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {galleryImages.map((src, i) => (
-                <div key={i} className="aspect-[4/3] overflow-hidden rounded-xl border border-[color:var(--border)] group">
-                  <img
-                    src={src}
-                    alt={galleryCaptions[i] ?? place.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+                <div key={i} className="aspect-[4/3] overflow-hidden rounded-xl border border-[color:var(--border)] group relative">
+                  <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                    <SmartImage src={src} alt={galleryCaptions[i] ?? place.name} thumb />
+                  </div>
                 </div>
               ))}
             </div>
