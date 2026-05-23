@@ -19,7 +19,7 @@ const IMG = {
   hills4: u("photo-1470071459604-3b5ec3a7fe05"),
   tea:    "https://static.wixstatic.com/media/adbc9d_5f9f1beb25274cd4bedb07a538223497~mv2.jpg/v1/fill/w_980,h_980,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/adbc9d_5f9f1beb25274cd4bedb07a538223497~mv2.jpg",
   lake1:  "https://www.indiatravel.app/wp-content/uploads/2024/04/Ooty-Tea-Museum.jpg",
-  lake2:  "https://www.holidify.com/images/compressed/3477.jpg",
+  lake2:  "https://assets.traveltriangle.com/blog/wp-content/uploads/2018/04/Thirumalai-Nayak-Mahal.jpg",
   forest: "https://www.sharonsable.com/images/10/9532/botanical-gardens-in-ooty-25-photo-7089.jpg",
   pine:   u("photo-1441974231531-c6227db76b6e"),
   temple1: u("photo-1582510003544-4d00b7f74220"),
