@@ -23,7 +23,7 @@ const IMG = {
   forest: "https://www.sharonsable.com/images/10/9532/botanical-gardens-in-ooty-25-photo-7089.jpg",
   pine:   u("photo-1441974231531-c6227db76b6e"),
   temple1: "https://www.indiatravel.app/wp-content/uploads/2024/02/places-to-visit-in-mahabalipuram.jpg",
-  temple2: u("photo-1609858155423-5fae0bd55785"),
+  temple2: "https://www.exploreourindia.com/backend/web/images/post/big/3483_Thanjavur%20Royal%20Palace%20And%20Art%20Gallery.webp",
   temple3: "https://www.holidify.com/images/bgImages/MADURAI.jpg",
   temple4: "https://irisholidays.com/keralatourism/wp-content/uploads/2025/02/mahabalipuram-tamlnadu.jpg",
   india1: "https://img.veenaworld.com/wp-content/uploads/2020/11/10-Madurai-Temples-with-Brilliant-Architecture-scaled.jpg",
