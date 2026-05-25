@@ -243,6 +243,13 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "reviews_booking_id_fkey"
+            columns: ["booking_id"]
+            isOneToOne: false
+            referencedRelation: "pending_bookings_for_drivers"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "reviews_customer_id_fkey"
             columns: ["customer_id"]
             isOneToOne: false
@@ -260,10 +267,116 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      pending_bookings_for_drivers: {
+        Row: {
+          booking_code: string | null
+          car_type: string | null
+          created_at: string | null
+          days_count: number | null
+          driver_id: string | null
+          drop_date: string | null
+          drop_datetime: string | null
+          drop_location: string | null
+          drop_time: string | null
+          from_city: string | null
+          id: string | null
+          people_count: number | null
+          pickup_datetime: string | null
+          pickup_location: string | null
+          pickup_time: string | null
+          start_date: string | null
+          start_time: string | null
+          status: string | null
+          to_city: string | null
+          trip_type: string | null
+        }
+        Insert: {
+          booking_code?: string | null
+          car_type?: string | null
+          created_at?: string | null
+          days_count?: number | null
+          driver_id?: string | null
+          drop_date?: string | null
+          drop_datetime?: string | null
+          drop_location?: string | null
+          drop_time?: string | null
+          from_city?: string | null
+          id?: string | null
+          people_count?: number | null
+          pickup_datetime?: string | null
+          pickup_location?: string | null
+          pickup_time?: string | null
+          start_date?: string | null
+          start_time?: string | null
+          status?: string | null
+          to_city?: string | null
+          trip_type?: string | null
+        }
+        Update: {
+          booking_code?: string | null
+          car_type?: string | null
+          created_at?: string | null
+          days_count?: number | null
+          driver_id?: string | null
+          drop_date?: string | null
+          drop_datetime?: string | null
+          drop_location?: string | null
+          drop_time?: string | null
+          from_city?: string | null
+          id?: string | null
+          people_count?: number | null
+          pickup_datetime?: string | null
+          pickup_location?: string | null
+          pickup_time?: string | null
+          start_date?: string | null
+          start_time?: string | null
+          status?: string | null
+          to_city?: string | null
+          trip_type?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bookings_driver_id_fkey"
+            columns: ["driver_id"]
+            isOneToOne: false
+            referencedRelation: "drivers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Functions: {
-      [_ in never]: never
+      get_pending_bookings_for_drivers: {
+        Args: never
+        Returns: {
+          booking_code: string | null
+          car_type: string | null
+          created_at: string | null
+          days_count: number | null
+          driver_id: string | null
+          drop_date: string | null
+          drop_datetime: string | null
+          drop_location: string | null
+          drop_time: string | null
+          from_city: string | null
+          id: string | null
+          people_count: number | null
+          pickup_datetime: string | null
+          pickup_location: string | null
+          pickup_time: string | null
+          start_date: string | null
+          start_time: string | null
+          status: string | null
+          to_city: string | null
+          trip_type: string | null
+        }[]
+        SetofOptions: {
+          from: "*"
+          to: "pending_bookings_for_drivers"
+          isOneToOne: false
+          isSetofReturn: true
+        }
+      }
     }
     Enums: {
       [_ in never]: never

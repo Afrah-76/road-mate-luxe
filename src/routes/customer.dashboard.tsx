@@ -84,26 +84,12 @@ function CustomerDashboard() {
     })();
   }, [loading, user, role, navigate]);
 
-  // Realtime: when one of customer's bookings gets driver assigned, alert
+  // Poll for booking updates (realtime disabled for security)
   useEffect(() => {
     if (!customerId) return;
-    const ch = supabase.channel(`customer-bookings-${customerId}`)
-      .on("postgres_changes", {
-        event: "UPDATE", schema: "public", table: "bookings",
-        filter: `customer_id=eq.${customerId}`,
-      }, async (payload) => {
-        const updated: any = payload.new;
-        if (updated.driver_id && updated.status === "accepted") {
-          const { data: drv } = await supabase.from("drivers").select("full_name, contact").eq("id", updated.driver_id).maybeSingle();
-          if (drv) {
-            toast.success(`Driver ${drv.full_name} accepted ${updated.booking_code}!`, { description: `Contact: ${drv.contact}` });
-            loadBookings();
-          }
-        }
-      })
-      .subscribe();
     loadBookings();
-    return () => { supabase.removeChannel(ch); };
+    const iv = setInterval(loadBookings, 15000);
+    return () => clearInterval(iv);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [customerId]);
 

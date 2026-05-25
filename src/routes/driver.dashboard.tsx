@@ -57,40 +57,22 @@ function DriverDashboard() {
     })();
   }, [loading, user, role, navigate]);
 
-  // Realtime: pending bookings
+  // Poll pending bookings (realtime disabled for security — bookings removed from publication)
   useEffect(() => {
     if (!driverId) return;
     refreshPending();
     refreshMyTrips();
-
-    const ch = supabase.channel(`driver-pending-${driverId}`)
-      .on("postgres_changes", {
-        event: "INSERT", schema: "public", table: "bookings",
-      }, (payload) => {
-        const b: any = payload.new;
-        if (b.status === "pending" && !b.driver_id) {
-          toast.info(`New trip request: ${b.booking_code}`, { description: tripLine(b) });
-          refreshPending();
-        }
-      })
-      .on("postgres_changes", {
-        event: "UPDATE", schema: "public", table: "bookings",
-      }, () => {
-        refreshPending();
-        refreshMyTrips();
-      })
-      .subscribe();
-    return () => { supabase.removeChannel(ch); };
+    const iv = setInterval(() => {
+      refreshPending();
+      refreshMyTrips();
+    }, 15000);
+    return () => clearInterval(iv);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [driverId]);
 
   const refreshPending = async () => {
-    const { data } = await supabase.from("bookings")
-      .select("*")
-      .is("driver_id", null)
-      .eq("status", "pending")
-      .order("created_at", { ascending: false });
-    setPending(data ?? []);
+    const { data } = await supabase.rpc("get_pending_bookings_for_drivers" as any);
+    setPending((data as any[]) ?? []);
   };
 
   const refreshMyTrips = async () => {
