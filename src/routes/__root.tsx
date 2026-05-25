@@ -78,11 +78,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Road Mate Tours — Luxury journeys across India" },
       { name: "description", content: "Premium travel agency connecting you with expert drivers and curated tours across India." },
       { name: "author", content: "Road Mate Tours" },
-      { property: "og:title", content: "Road Mate Tours" },
+      { property: "og:title", content: "Road Mate Tours — Luxury journeys across India" },
       { property: "og:description", content: "Premium travel agency connecting you with expert drivers and curated tours across India." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Road Mate Tours — Luxury journeys across India" },
+      { name: "twitter:description", content: "Premium travel agency connecting you with expert drivers and curated tours across India." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c31f5deb-b64e-4a5d-9913-cb5b8e74f655" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c31f5deb-b64e-4a5d-9913-cb5b8e74f655" },
     ],
     links: [
       {
