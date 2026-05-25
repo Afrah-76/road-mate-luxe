@@ -88,7 +88,6 @@
   "overrides": {
     "@tanstack/start-server-core": "1.168.3",
     "@tanstack/start-plugin-core": "1.170.5",
-    "@tanstack/start-client-core": "1.170.0",
-    "@tanstack/router-core": "1.168.5"
+    "@tanstack/start-client-core": "1.170.0"
   }
 }
