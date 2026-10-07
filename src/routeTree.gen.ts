@@ -9,41 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SignupRouteImport } from './routes/signup'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as LoginRouteImport } from './routes/login'
-import { Route as DriverLoginRouteImport } from './routes/driver-login'
-import { Route as BookRouteImport } from './routes/book'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as PlacesSlugRouteImport } from './routes/places.$slug'
-import { Route as DriversIdRouteImport } from './routes/drivers.$id'
-import { Route as DriverDashboardRouteImport } from './routes/driver.dashboard'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as DriverLoginRouteImport } from './routes/driver-login'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SignupRouteImport } from './routes/signup'
 import { Route as CustomerDashboardRouteImport } from './routes/customer.dashboard'
+import { Route as DriverDashboardRouteImport } from './routes/driver.dashboard'
+import { Route as DriversIdRouteImport } from './routes/drivers.$id'
+import { Route as PlacesSlugRouteImport } from './routes/places.$slug'
 
-const SignupRoute = SignupRouteImport.update({
-  id: '/signup',
-  path: '/signup',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DriverLoginRoute = DriverLoginRouteImport.update({
-  id: '/driver-login',
-  path: '/driver-login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BookRoute = BookRouteImport.update({
-  id: '/book',
-  path: '/book',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -51,19 +31,34 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PlacesSlugRoute = PlacesSlugRouteImport.update({
-  id: '/places/$slug',
-  path: '/places/$slug',
+const DriverLoginRoute = DriverLoginRouteImport.update({
+  id: '/driver-login',
+  path: '/driver-login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DriversIdRoute = DriversIdRouteImport.update({
-  id: '/drivers/$id',
-  path: '/drivers/$id',
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomerDashboardRoute = CustomerDashboardRouteImport.update({
+  id: '/customer/dashboard',
+  path: '/customer/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DriverDashboardRoute = DriverDashboardRouteImport.update({
@@ -71,9 +66,14 @@ const DriverDashboardRoute = DriverDashboardRouteImport.update({
   path: '/driver/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CustomerDashboardRoute = CustomerDashboardRouteImport.update({
-  id: '/customer/dashboard',
-  path: '/customer/dashboard',
+const DriversIdRoute = DriversIdRouteImport.update({
+  id: '/drivers/$id',
+  path: '/drivers/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlacesSlugRoute = PlacesSlugRouteImport.update({
+  id: '/places/$slug',
+  path: '/places/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -175,39 +175,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/signup': {
-      id: '/signup'
-      path: '/signup'
-      fullPath: '/signup'
-      preLoaderRoute: typeof SignupRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/driver-login': {
-      id: '/driver-login'
-      path: '/driver-login'
-      fullPath: '/driver-login'
-      preLoaderRoute: typeof DriverLoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/book': {
-      id: '/book'
-      path: '/book'
-      fullPath: '/book'
-      preLoaderRoute: typeof BookRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -217,25 +189,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/places/$slug': {
-      id: '/places/$slug'
-      path: '/places/$slug'
-      fullPath: '/places/$slug'
-      preLoaderRoute: typeof PlacesSlugRouteImport
+    '/driver-login': {
+      id: '/driver-login'
+      path: '/driver-login'
+      fullPath: '/driver-login'
+      preLoaderRoute: typeof DriverLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/drivers/$id': {
-      id: '/drivers/$id'
-      path: '/drivers/$id'
-      fullPath: '/drivers/$id'
-      preLoaderRoute: typeof DriversIdRouteImport
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/customer/dashboard': {
+      id: '/customer/dashboard'
+      path: '/customer/dashboard'
+      fullPath: '/customer/dashboard'
+      preLoaderRoute: typeof CustomerDashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/driver/dashboard': {
@@ -245,11 +238,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DriverDashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/customer/dashboard': {
-      id: '/customer/dashboard'
-      path: '/customer/dashboard'
-      fullPath: '/customer/dashboard'
-      preLoaderRoute: typeof CustomerDashboardRouteImport
+    '/drivers/$id': {
+      id: '/drivers/$id'
+      path: '/drivers/$id'
+      fullPath: '/drivers/$id'
+      preLoaderRoute: typeof DriversIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/places/$slug': {
+      id: '/places/$slug'
+      path: '/places/$slug'
+      fullPath: '/places/$slug'
+      preLoaderRoute: typeof PlacesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -271,3 +271,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
